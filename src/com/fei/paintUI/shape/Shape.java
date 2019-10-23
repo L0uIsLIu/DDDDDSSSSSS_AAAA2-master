@@ -1,0 +1,172 @@
+package com.fei.paintUI.shape;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
+
+import java.awt.Color;
+import java.awt.Graphics;
+
+
+
+
+@JsonIgnoreProperties(ignoreUnknown = true)
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, property = "name", include = JsonTypeInfo.As.PROPERTY)
+@JsonSubTypes({
+        @JsonSubTypes.Type(value = Rect.class, name = "Rectangle"),
+        @JsonSubTypes.Type(value = Line.class, name = "Line"),
+        @JsonSubTypes.Type(value = Oval.class, name = "Oval"),
+        @JsonSubTypes.Type(value = FillRect.class, name = "Clear"),
+        @JsonSubTypes.Type(value = Eraser.class, name = "Rubber"),
+        @JsonSubTypes.Type(value = Line.class, name = "Brush"),
+        @JsonSubTypes.Type(value = Text.class, name = "Text"),
+        @JsonSubTypes.Type(value = FillRect.class, name = "FillRect"),
+        @JsonSubTypes.Type(value = Oval.class, name = "Circle"),
+        @JsonSubTypes.Type(value = FillOval.class, name = "FillOval"),
+        //正常聊天
+        @JsonSubTypes.Type(value = Chatting.class, name = "Chatting"),
+        @JsonSubTypes.Type(value = Username.class, name = "Username"),   //用户名
+        @JsonSubTypes.Type(value = Kick.class, name = "Kick"),   //踢人
+        @JsonSubTypes.Type(value = EXIT.class, name = "EXIT")
+}
+)
+public abstract class Shape {
+    public int x1, y1, x2, y2;
+    public String name;
+    @JsonIgnore
+    public Color color;
+    public Integer red;
+    public Integer green;
+    public Integer blue;
+    public String text;
+
+
+    public Shape() {
+    };
+
+    public Shape(int x1, int y1, int x2, int y2, String name, Color color, String text) {
+        this.x1 = x1;
+        this.y1 = y1;
+        this.x2 = x2;
+        this.y2 = y2;
+        this.name = name;
+        this.color = color;
+        this.text = text;
+    }
+
+    public void setRGB(){
+        this.red = color.getRed();
+        this.green = color.getGreen();
+        this.blue = color.getBlue();
+    }
+
+    public void setColorByRGB(){
+        this.color=new Color(color.getRed(), color.getGreen(),color.getBlue());
+        System.out.println(this.color);
+    }
+
+
+    public void drawShape(Graphics g) {
+
+    }
+
+    @Override
+    public String toString() {
+        return "Shape{" +
+                "x1=" + x1 +
+                ", y1=" + y1 +
+                ", x2=" + x2 +
+                ", y2=" + y2 +
+                ", name='" + name + '\'' +
+                ", color=" + color +
+                ", red=" + red +
+                ", green=" + green +
+                ", blue=" + blue +
+                ", text='" + text + '\'' +
+                '}';
+    }
+
+    public int getX1() {
+        return x1;
+    }
+
+    public void setX1(int x1) {
+        this.x1 = x1;
+    }
+
+    public int getY1() {
+        return y1;
+    }
+
+    public void setY1(int y1) {
+        this.y1 = y1;
+    }
+
+    public int getX2() {
+        return x2;
+    }
+
+    public void setX2(int x2) {
+        this.x2 = x2;
+    }
+
+    public int getY2() {
+        return y2;
+    }
+
+    public void setY2(int y2) {
+        this.y2 = y2;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Color getColor() {
+        return color;
+    }
+
+    public void setColor(Color color) {
+        this.color = color;
+/*        this.red = color.getRed();
+        this.green = color.getGreen();
+        this.blue = color.getBlue();*/
+    }
+
+    public Integer getRed() {
+        return red;
+    }
+
+    public void setRed(Integer red) {
+        this.red = red;
+    }
+
+    public Integer getGreen() {
+        return green;
+    }
+
+    public void setGreen(Integer green) {
+        this.green = green;
+    }
+
+    public Integer getBlue() {
+        return blue;
+    }
+
+    public void setBlue(Integer blue) {
+        this.blue = blue;
+    }
+
+    public String getText() {
+        return text;
+    }
+
+    public void setText(String text) {
+        this.text = text;
+    }
+}

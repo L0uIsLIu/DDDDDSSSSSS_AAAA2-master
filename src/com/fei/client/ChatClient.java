@@ -28,9 +28,7 @@ public class ChatClient extends JFrame {
     private JTextArea contentArea ;   //群聊消息显示框
     private String name ;                   //当前用户名称
     private JTextArea userListArea ;   //群聊用户名显示框
-//    private ArrayList<String> namelist = new ArrayList<>();    //用户名列表
     private String authority;    //是否为管理员
-//    private Boolean ismanager = false;
 
 
     public ChatClient(Socket socket, String name, String authority)  {
@@ -44,7 +42,7 @@ public class ChatClient extends JFrame {
         /*接下来启动单独线程，专门从服务器中读取数据
          *
          */
-        ClientThread clientThread  = new ClientThread(socket,contentArea,userListArea,name) ;
+        ClientThread clientThread  = new ClientThread(socket,contentArea,userListArea,name,authority) ;
         clientThread.start();
 
         //启动一个绘画线程
@@ -54,12 +52,9 @@ public class ChatClient extends JFrame {
         //再启动一个线程用来不停地检查msgList(看看ui是伐画了新的东西)
         MsgThread msgThread = new MsgThread(socket);
         msgThread.start();
+
     }
 
-//    public Boolean isManager(){
-//        Boolean ismanager = false;
-//        return ismanager;
-//    }
 
 
     public void init( )  {
@@ -109,10 +104,7 @@ public class ChatClient extends JFrame {
         bPanel.add(namelabel) ;
 
         //用户名列表
-//        String chatContent = name+" "+time+" said: "+str ;
-
         String sendStrName="{\"name\":\"Username\",\"x1\":0,\"y1\":0,\"x2\":0,\"y2\":0,\"name\":\"Username\",\"red\":255,\"green\":255,\"blue\":255,\"text\":\""+ name +"\"}";
-//        System.out.println(sendStrName);
 
         userListArea.append(name);
         userListArea.append("\n");
@@ -131,19 +123,16 @@ public class ChatClient extends JFrame {
         JTextField nameText = new JTextField(null,8);
         bPanel.add(nameText) ;
 
-        //踢人
         JButton removeButton = new JButton("Kick");
         removeButton.addActionListener( new ActionListener( )  {
             public void actionPerformed(ActionEvent e)  {
                 String[] strs = userListArea.getText().split("\n");
-//                System.out.println(strs[0]);
-//                System.out.println(strs[1]);
+
                 String nt = nameText.getText();
                 if(! nt.equals("")){
                     System.out.println(nt);
                     for(int i = 0;i <strs.length;i++){
                         if(nt.equals(strs[i])){
-//                            System.out.println("进来了");
                             if(nt.equals(name)){
                                 JOptionPane.showMessageDialog(null,"You cannot kick yourself!");
                             }
@@ -158,7 +147,7 @@ public class ChatClient extends JFrame {
                                 }catch(Exception e1)  {
                                     e1.printStackTrace();
                                 }
-                                //这里应该再加一个删除userlist上显示的被踢掉的用户名的功能
+                                //删除userlist上显示的被踢掉的用户名
                                 userListArea.setText("");
                                 for(int j=0;j<i;j++) {
                                     userListArea.append(strs[j]);
@@ -239,9 +228,6 @@ class PaintThread extends Thread  {
     private String authority;
     private Socket socket;
 
-//    public PaintThread(String authority){
-//        this.authority = authority;
-//    }
     public PaintThread(String authority, Socket socket){
         this.authority = authority;
         this.socket = socket;
@@ -296,12 +282,14 @@ class ClientThread extends Thread  {
     private JTextArea contentArea ;
     private JTextArea userListArea;
     private String name;
+    private String authority;
 
-    public ClientThread(Socket socket, JTextArea  conteArea, JTextArea userListArea, String name)  {
+    public ClientThread(Socket socket, JTextArea  conteArea, JTextArea userListArea, String name, String authority)  {
         this.socket = socket ;
         this.contentArea = conteArea ;
         this.userListArea = userListArea;
         this.name = name;
+        this.authority = authority;
     }
 
     public void run()  {
@@ -316,8 +304,7 @@ class ClientThread extends Thread  {
                 String nameContent = ClientUtils.putName(str);
                 String kickContent = ClientUtils.putKick(str);
                 String EXITContent = ClientUtils.putEXIT(str);
-//                System.out.println(chatContent);
-//                System.out.println(nameContent);
+
                 //说明这个是聊天内容
                 if(chatContent!=null){
                     contentArea.append(chatContent);
@@ -325,8 +312,28 @@ class ClientThread extends Thread  {
                 }
                 //说明是用户名信息
                 if(nameContent!=null){
-                    userListArea.append(nameContent);
-                    userListArea.append("\n");
+                    //manager批准才能join
+                    if(authority.equals("isManager")){
+                        int i=JOptionPane.showConfirmDialog(null, "User: "+nameContent+ " want to join the white board, agree or not?",
+                                "Join confirmation dialog",JOptionPane.YES_NO_CANCEL_OPTION);
+                        //通过对话框中按钮的选择来决定结果
+                        if(i==0) {
+                            userListArea.append(nameContent);
+                            userListArea.append("\n");
+                        }else{
+                            String sendStrKick="{\"name\":\"Kick\",\"x1\":0,\"y1\":0,\"x2\":0,\"y2\":0,\"name\":\"Kick\",\"red\":255,\"green\":255,\"blue\":255,\"text\":\""+ nameContent +"\"}";
+
+                            PrintWriter out = null ;
+                            try  {
+                                out = new PrintWriter(new OutputStreamWriter(socket.getOutputStream() ) ) ;
+                                out.println(sendStrKick) ;
+                                out.flush();
+                            }catch(Exception e1)  {
+                                e1.printStackTrace();
+                            }
+                        }
+                    }
+
                 }
                 //说明是踢人请求
                 if(kickContent!=null){

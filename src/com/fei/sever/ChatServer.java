@@ -12,10 +12,14 @@ import java.util.ArrayList;
 
 
 public class ChatServer {
+
     private List<Socket> sockets = new ArrayList<Socket>() ;    //类集的应用
-    public ChatServer() throws IOException  {
-        ServerSocket ss = new ServerSocket(8888) ;
-        System.out.println("Server is listening the port : 8888") ;
+    private int port = 8888;
+
+    public ChatServer(String[] args) throws IOException  {
+        setPort(args);
+        ServerSocket ss = new ServerSocket(port) ;
+        System.out.println("Server is listening the port : "+port) ;
 
         while(true)  {
             Socket socket = ss.accept();
@@ -27,9 +31,34 @@ public class ChatServer {
         }
     }
 
-    public static void main(String args[])  {
+    private void setPort(String[] args) {
         try {
-            new ChatServer() ;
+            port = Integer.parseInt(args[0]);
+            if (port > 65535 || port <= 0) {
+                System.out.println("Invalid port number!");
+                System.out.println("Using default port: 8888");
+
+                port = 8888;
+            } else {
+                System.out.println("Using port: " + port);
+            }
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println("No port number!");
+            System.out.println("Using default port: 8888");
+            port = 8888;
+
+        } catch (NumberFormatException e) {
+            System.out.println("Wrong port number format!");
+            System.out.println("Using default port: 8888");
+            port = 8888;
+
+        }
+
+    }
+
+    public static void main(String[] args)  {
+        try {
+            new ChatServer(args) ;
         } catch(Exception e)  {
             e.printStackTrace();
         }
@@ -84,13 +113,4 @@ class ServerRunner implements Runnable  {
     }
 }
 
-/*
 
-class showUI implements  Runnable{
-
-    @Override
-    public void run() {
-        CheckingUI pui = new CheckingUI();
-        pui.initUI();
-    }
-}*/

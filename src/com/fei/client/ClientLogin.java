@@ -31,16 +31,14 @@ import javax.swing.border.TitledBorder;
 
 public class ClientLogin extends JFrame  {
     private JTextField nametext ;
-    private JPasswordField passwordtetx ;
-    //private Object bPanel;
 
-    public ClientLogin()  {
-        this.init() ;       //init方法初始化
+    public ClientLogin(String[] args)  {
+        this.init(args) ;       //init方法初始化
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         this.setVisible(true);
     }
 
-    public void init()  {
+    public void init(String[] args)  {
         this.setTitle("White Board Client");
         this.setSize(300,150);     //借用成熟美观尺寸
         int y = (int)Toolkit.getDefaultToolkit().getScreenSize().getHeight() ;
@@ -65,12 +63,6 @@ public class ClientLogin extends JFrame  {
         nametext = new JTextField() ;
         nametext.setBounds(115,30,120,22);
         mainPanel.add(nametext) ;
-        /*JLabel passwordlabel = new JLabel("please enter") ;
-        passwordlabel.setBounds(30,60,80,22);
-        mainPanel.add(passwordlabel) ;
-        passwordtetx = new JPasswordField() ;
-        passwordtetx.setBounds(115,60,120,22) ;
-        mainPanel.add(passwordtetx) ;*/
 
         //接下来按钮位置排放
         JPanel bPanel = new JPanel() ;
@@ -80,7 +72,6 @@ public class ClientLogin extends JFrame  {
         reset.addActionListener(new ActionListener()  {    //为“重置”按钮添加事件监听
             public void actionPerformed(ActionEvent e)  {
                 nametext.setText("");
-                passwordtetx.setText("");
             }
         });
         bPanel.add(reset) ;
@@ -90,7 +81,7 @@ public class ClientLogin extends JFrame  {
          */
 
         JButton submit = new JButton("login") ;
-        submit.addActionListener(new LoginAction(this) );  //因为登陆相对复杂，重新为登陆写一个类
+        submit.addActionListener(new LoginAction(this, args) );  //因为登陆相对复杂，重新为登陆写一个类
         bPanel.add(submit);
     }
 
@@ -103,30 +94,40 @@ public class ClientLogin extends JFrame  {
     class LoginAction implements ActionListener  {
         private JFrame self ;
         private String authority;
-        public LoginAction(JFrame self)  {
+        private int port = 8888;
+        private String[] args;
+        public LoginAction(JFrame self, String[] args)  {
             this.self = self ;
+            this.args = args;
         }
 
         public void actionPerformed(ActionEvent e)  {
-            //System.out.println("用户名是："+nametext.getText()+" 密码是："+new String(passwordtext.getPassword())) ;
             try  {
                 //开始连接到服务器
-                Socket socket = new Socket("127.0.0.1",8888) ;
+                if(args.length!=0){
+                    if (!args[0].equals("")){
+                        port = Integer.parseInt(args[0]);
+                    }else if(Integer.parseInt(args[0]) > 65535 || Integer.parseInt(args[0]) <= 0){
+                        JFrame jf = new JFrame();
+                        JOptionPane.showMessageDialog(jf, "Invalid port number!\nUsing default settings!");
+                        port = 8888;
+                    } else {
+                        port = 8888;
+                    }
+                }
+
+                Socket socket = new Socket("127.0.0.1", port) ;
 
                 //过滤用户权限manager/client
                 DataInputStream input = new DataInputStream(socket.getInputStream());
-                System.out.println(input);
                 String message;
-//                while(true && input.available() > 0)
-//                {
                 message = input.readUTF();
                 System.out.println(message);
-//                }
+
                 if(message.equals("isClient")){
                     authority = "isClient";
 
                 }else{
-//                    new ChatManager(socket,nametext.getText()) ;
                     authority = "isManager";
                 }
 
@@ -135,16 +136,26 @@ public class ClientLogin extends JFrame  {
                 new ChatClient(socket,nametext.getText(),authority) ;
                 //调用dispose方法关闭登陆框
                 self.dispose();
-            }catch(UnknownHostException e1)  {
+            } catch (ArrayIndexOutOfBoundsException e1) {
                 e1.printStackTrace();
                 JOptionPane.showConfirmDialog(self, "Can not find the server","Connection fail",JOptionPane.OK_OPTION,JOptionPane.ERROR_MESSAGE) ;
-            }catch(IOException e1)  {
+                System.exit(0);
+            } catch (NumberFormatException e1){
+                e1.printStackTrace();
+                JOptionPane.showConfirmDialog(self, "Can not find the server","Connection fail",JOptionPane.OK_OPTION,JOptionPane.ERROR_MESSAGE) ;
+                System.exit(0);
+            } catch(UnknownHostException e1)  {
+                e1.printStackTrace();
+                JOptionPane.showConfirmDialog(self, "Can not find the server","Connection fail",JOptionPane.OK_OPTION,JOptionPane.ERROR_MESSAGE) ;
+                System.exit(0);
+            } catch(IOException e1)  {
                 e1.printStackTrace() ;
                 JOptionPane.showConfirmDialog(self, "Can not find the server","Connection fail",JOptionPane.OK_OPTION,JOptionPane.ERROR_MESSAGE) ;
+                System.exit(0);
             }
         }
     }
     public static void main(String args[])  {
-        new ClientLogin() ;
+        new ClientLogin(args) ;
     }
 }

@@ -34,7 +34,6 @@ public class PainterUI extends JPanel {
         // 添加3个JPanel容器
         JPanel jp2 = new JPanel();
         JPanel jp3 = new JPanel();
-        //JButton button4=new JButton("右");     //菜单栏
 
 
         // 将JPanel布局到窗体中
@@ -102,12 +101,9 @@ public class PainterUI extends JPanel {
         JMenuBar menuBar = new JMenuBar();
         jf.setJMenuBar(menuBar);
         JMenu menu1 = new JMenu("File");
-        //JMenu menu2 = new JMenu("退出");
         menuBar.add(menu1);
-        //menuBar.add(menu2);
         JMenuItem item1 = new JMenuItem("Open");
         JMenuItem item2 = new JMenuItem("Save as");
-        //JMenuItem item3 = new JMenuItem("另存为");
         JMenuItem item4 = new JMenuItem("Exit");
         JMenuItem item5 = new JMenuItem("New");
         JMenuItem item6 = new JMenuItem("Save");
@@ -115,7 +111,6 @@ public class PainterUI extends JPanel {
         menu1.add(item1);
         menu1.add(item6);
         menu1.add(item2);
-        //menu1.add(item3);
         menu1.addSeparator();
         menu1.add(item4);
 
@@ -123,7 +118,6 @@ public class PainterUI extends JPanel {
         if(authority.equals("isClient")){
             menu1.setEnabled(false);
         }
-//        menu1.setEnabled(false);
 
         //New
         item5.addActionListener(new ActionListener() {
@@ -140,14 +134,12 @@ public class PainterUI extends JPanel {
             public void actionPerformed(ActionEvent e) {
                 // TODO Auto-generated method stub
                 JFileChooser chooser = new JFileChooser();
-                if (chooser.showOpenDialog(item1)==JFileChooser.APPROVE_OPTION) {//
-/*                    File file = chooser.getSelectedFile();
-                    textArea.setText(file.getName()+":"+file.getPath()+"\n"+file.length());
-                    readFile(file);*/
+                if (chooser.showOpenDialog(item1)==JFileChooser.APPROVE_OPTION) {
+
                     File file = chooser.getSelectedFile();
                     Shape[] shapes = IOUtil.readFile(file);
                     dl.rebuild(shapes);
-                };
+                }
 
             }
         });
@@ -255,7 +247,6 @@ public class PainterUI extends JPanel {
             while(true){
                 if(!ClientUtils.isEmpty()){
                     //取出第一个元素
-//                    System.out.println("去除了第一个元素！");
                     dl.rebuild(ClientUtils.getShape());
 
                 }else{  //如果没有内容就睡一会
@@ -270,8 +261,4 @@ public class PainterUI extends JPanel {
     }
 
 
-//    public static void main(String[] args) {
-//        PainterUI pui = new PainterUI();
-//        pui.initUI();
-//    }
 }

@@ -15,28 +15,6 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/fei/client/ClientLogin.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1620">
-              <caret line="130" selection-start-line="130" selection-end-line="130" />
-              <folding>
-                <element signature="e#2604#2605#0" expanded="true" />
-                <element signature="e#2656#2657#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/fei/sever/ChatServer.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="394">
-              <caret line="115" selection-start-line="115" selection-end-line="115" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/fei/paintUI/PainterUI.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="360">
@@ -54,7 +32,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/fei/client/ChatClient.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="4455">
@@ -63,6 +41,28 @@
                 <element signature="e#7813#7814#0" expanded="true" />
                 <element signature="e#7854#7855#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/fei/client/ClientLogin.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="878">
+              <caret line="161" column="31" selection-start-line="161" selection-start-column="31" selection-end-line="161" selection-end-column="31" />
+              <folding>
+                <element signature="e#2604#2605#0" expanded="true" />
+                <element signature="e#2656#2657#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/fei/sever/ChatServer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="70">
+              <caret line="16" column="28" lean-forward="true" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="28" />
             </state>
           </provider>
         </entry>
@@ -127,10 +127,11 @@
         <option value="$PROJECT_DIR$/src/com/fei/paintUI/shape/Shape.java" />
         <option value="$PROJECT_DIR$/src/com/fei/paintUI/shape/Kick.java" />
         <option value="$PROJECT_DIR$/src/com/fei/paintUI/shape/EXIT.java" />
-        <option value="$PROJECT_DIR$/src/com/fei/client/ClientLogin.java" />
         <option value="$PROJECT_DIR$/src/com/fei/sever/ChatServer.java" />
         <option value="$PROJECT_DIR$/src/com/fei/paintUI/PainterUI.java" />
         <option value="$PROJECT_DIR$/src/com/fei/client/ChatClient.java" />
+        <option value="$PROJECT_DIR$/src/com/fei/sever/Test.java" />
+        <option value="$PROJECT_DIR$/src/com/fei/client/ClientLogin.java" />
       </list>
     </option>
   </component>
@@ -246,7 +247,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.ClientLogin (1)">
+  <component name="RunManager" selected="Application.ClientLogin">
     <configuration name="ChatServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.fei.sever.ChatServer" />
       <module name="DS_Assignment2" />
@@ -289,6 +290,7 @@
     <configuration name="ClientLogin" type="Application" factoryName="Application" singleton="false" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.fei.client.ClientLogin" />
       <module name="DS_Assignment2" />
+      <option name="PROGRAM_PARAMETERS" value="8888 127.0.0.1" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.fei.client.*" />
@@ -321,8 +323,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.ChatServer" />
         <item itemvalue="Application.ClientLogin" />
+        <item itemvalue="Application.ChatServer" />
         <item itemvalue="Application.PainterUI" />
       </list>
     </recent_temporary>
@@ -346,16 +348,15 @@
       <workItem from="1571705279072" duration="10737000" />
       <workItem from="1571722574929" duration="26067000" />
       <workItem from="1571789118512" duration="7730000" />
-      <workItem from="1571889193945" duration="5937000" />
+      <workItem from="1571889193945" duration="8145000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="83377000" />
+    <option name="totallyTimeSpent" value="85585000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="811" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="Designer" order="0" />
       <window_info id="UI Designer" order="1" />
@@ -650,24 +651,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/fei/client/ClientLogin.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1620">
-          <caret line="130" selection-start-line="130" selection-end-line="130" />
-          <folding>
-            <element signature="e#2604#2605#0" expanded="true" />
-            <element signature="e#2656#2657#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/fei/sever/ChatServer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="394">
-          <caret line="115" selection-start-line="115" selection-end-line="115" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/fei/paintUI/PainterUI.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
@@ -689,6 +672,31 @@
           <folding>
             <element signature="e#7813#7814#0" expanded="true" />
             <element signature="e#7854#7855#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/fei/sever/Test.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="945">
+          <caret line="63" column="33" lean-forward="true" selection-start-line="63" selection-start-column="33" selection-end-line="63" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/fei/sever/ChatServer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="70">
+          <caret line="16" column="28" lean-forward="true" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/fei/client/ClientLogin.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="878">
+          <caret line="161" column="31" selection-start-line="161" selection-start-column="31" selection-end-line="161" selection-end-column="31" />
+          <folding>
+            <element signature="e#2604#2605#0" expanded="true" />
+            <element signature="e#2656#2657#0" expanded="true" />
           </folding>
         </state>
       </provider>

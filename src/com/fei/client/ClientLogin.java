@@ -95,6 +95,7 @@ public class ClientLogin extends JFrame  {
         private JFrame self ;
         private String authority;
         private int port = 8888;
+        private String ip_address = "127.0.0.1";
         private String[] args;
         public LoginAction(JFrame self, String[] args)  {
             this.self = self ;
@@ -114,9 +115,12 @@ public class ClientLogin extends JFrame  {
                     } else {
                         port = 8888;
                     }
+                    if(!args[1].equals("")){
+                        ip_address = args[1];
+                    }
                 }
 
-                Socket socket = new Socket("127.0.0.1", port) ;
+                Socket socket = new Socket(ip_address, port);
 
                 //过滤用户权限manager/client
                 DataInputStream input = new DataInputStream(socket.getInputStream());
@@ -149,6 +153,10 @@ public class ClientLogin extends JFrame  {
                 JOptionPane.showConfirmDialog(self, "Can not find the server","Connection fail",JOptionPane.OK_OPTION,JOptionPane.ERROR_MESSAGE) ;
                 System.exit(0);
             } catch(IOException e1)  {
+                e1.printStackTrace() ;
+                JOptionPane.showConfirmDialog(self, "Can not find the server","Connection fail",JOptionPane.OK_OPTION,JOptionPane.ERROR_MESSAGE) ;
+                System.exit(0);
+            } catch (Exception e1){
                 e1.printStackTrace() ;
                 JOptionPane.showConfirmDialog(self, "Can not find the server","Connection fail",JOptionPane.OK_OPTION,JOptionPane.ERROR_MESSAGE) ;
                 System.exit(0);

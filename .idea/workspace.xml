@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="DS_Assignment2:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="516727f6-8527-4419-90fc-07e866e54a54" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -14,11 +19,15 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/fei/paintUI/PainterUI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="36" selection-start-line="36" selection-end-line="36" />
+            <state relative-caret-position="188">
+              <caret line="67" column="48" lean-forward="true" selection-start-line="67" selection-start-column="48" selection-end-line="67" selection-end-column="48" />
+              <folding>
+                <element signature="e#9222#9223#0" expanded="true" />
+                <element signature="e#9259#9260#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -26,8 +35,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/fei/paintUI/DrawListener.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-4661">
-              <caret line="19" column="24" selection-start-line="19" selection-start-column="24" selection-end-line="19" selection-end-column="24" />
+            <state relative-caret-position="15">
+              <caret line="174" column="40" selection-start-line="174" selection-start-column="24" selection-end-line="174" selection-end-column="40" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/fei/paintUI/util/ClientUtils.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1500">
+              <caret line="107" selection-start-line="107" selection-end-line="107" />
             </state>
           </provider>
         </entry>
@@ -35,21 +53,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/fei/client/ChatClient.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4455">
-              <caret line="318" column="42" selection-start-line="318" selection-start-column="42" selection-end-line="318" selection-end-column="42" />
-              <folding>
-                <element signature="e#7813#7814#0" expanded="true" />
-                <element signature="e#7854#7855#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="4170">
+              <caret line="301" column="63" selection-start-line="301" selection-start-column="63" selection-end-line="301" selection-end-column="63" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/fei/client/ClientLogin.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="878">
-              <caret line="161" column="31" selection-start-line="161" selection-start-column="31" selection-end-line="161" selection-end-column="31" />
+            <state relative-caret-position="2085">
+              <caret line="163" column="9" selection-start-line="163" selection-start-column="9" selection-end-line="163" selection-end-column="9" />
               <folding>
                 <element signature="e#2604#2605#0" expanded="true" />
                 <element signature="e#2656#2657#0" expanded="true" />
@@ -59,10 +73,19 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/fei/paintUI/shape/Text.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="10" column="24" selection-start-line="10" selection-start-column="16" selection-end-line="10" selection-end-column="24" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/fei/sever/ChatServer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="70">
-              <caret line="16" column="28" lean-forward="true" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="28" />
+            <state relative-caret-position="1260">
+              <caret line="91" column="13" selection-start-line="91" selection-start-column="13" selection-end-line="91" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -95,6 +118,8 @@
       <find>checkManager</find>
       <find>namelist</find>
       <find>print</find>
+      <find>PaintingRunner</find>
+      <find>getActionCommand</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -118,20 +143,20 @@
         <option value="$PROJECT_DIR$/src/com/fei/paintUI/shape/fillOval.java" />
         <option value="$PROJECT_DIR$/src/com/fei/paintUI/shape/Chatting.java" />
         <option value="$PROJECT_DIR$/src/com/fei/test/TestCollection.java" />
-        <option value="$PROJECT_DIR$/src/com/fei/paintUI/DrawListener.java" />
         <option value="$PROJECT_DIR$/src/com/fei/paintUI/util/IOUtil.java" />
         <option value="$PROJECT_DIR$/src/com/fei/client/ChatManager.java" />
         <option value="$PROJECT_DIR$/src/com/fei/paintUI/ManagerPainterUI.java" />
         <option value="$PROJECT_DIR$/src/com/fei/paintUI/shape/Username.java" />
-        <option value="$PROJECT_DIR$/src/com/fei/paintUI/util/ClientUtils.java" />
-        <option value="$PROJECT_DIR$/src/com/fei/paintUI/shape/Shape.java" />
         <option value="$PROJECT_DIR$/src/com/fei/paintUI/shape/Kick.java" />
         <option value="$PROJECT_DIR$/src/com/fei/paintUI/shape/EXIT.java" />
         <option value="$PROJECT_DIR$/src/com/fei/sever/ChatServer.java" />
-        <option value="$PROJECT_DIR$/src/com/fei/paintUI/PainterUI.java" />
-        <option value="$PROJECT_DIR$/src/com/fei/client/ChatClient.java" />
         <option value="$PROJECT_DIR$/src/com/fei/sever/Test.java" />
+        <option value="$PROJECT_DIR$/src/com/fei/paintUI/shape/Shape.java" />
+        <option value="$PROJECT_DIR$/src/com/fei/paintUI/DrawListener.java" />
+        <option value="$PROJECT_DIR$/src/com/fei/client/ChatClient.java" />
+        <option value="$PROJECT_DIR$/src/com/fei/paintUI/util/ClientUtils.java" />
         <option value="$PROJECT_DIR$/src/com/fei/client/ClientLogin.java" />
+        <option value="$PROJECT_DIR$/src/com/fei/paintUI/PainterUI.java" />
       </list>
     </option>
   </component>
@@ -154,8 +179,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -201,6 +226,22 @@
               <item name="DDDDDSSSSSS_AAAA2-master" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="fei" type="462c0819:PsiDirectoryNode" />
+              <item name="paintUI" type="462c0819:PsiDirectoryNode" />
+              <item name="shape" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DDDDDSSSSSS_AAAA2-master" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DDDDDSSSSSS_AAAA2-master" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="fei" type="462c0819:PsiDirectoryNode" />
+              <item name="paintUI" type="462c0819:PsiDirectoryNode" />
+              <item name="util" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DDDDDSSSSSS_AAAA2-master" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DDDDDSSSSSS_AAAA2-master" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="fei" type="462c0819:PsiDirectoryNode" />
               <item name="sever" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -224,6 +265,9 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
@@ -247,7 +291,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.ClientLogin">
+  <component name="RunManager" selected="Application.ClientLogin (1)">
     <configuration name="ChatServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.fei.sever.ChatServer" />
       <module name="DS_Assignment2" />
@@ -290,7 +334,6 @@
     <configuration name="ClientLogin" type="Application" factoryName="Application" singleton="false" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.fei.client.ClientLogin" />
       <module name="DS_Assignment2" />
-      <option name="PROGRAM_PARAMETERS" value="8888 127.0.0.1" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.fei.client.*" />
@@ -323,8 +366,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.ClientLogin" />
         <item itemvalue="Application.ChatServer" />
+        <item itemvalue="Application.ClientLogin" />
         <item itemvalue="Application.PainterUI" />
       </list>
     </recent_temporary>
@@ -348,31 +391,33 @@
       <workItem from="1571705279072" duration="10737000" />
       <workItem from="1571722574929" duration="26067000" />
       <workItem from="1571789118512" duration="7730000" />
-      <workItem from="1571889193945" duration="8145000" />
+      <workItem from="1571889193945" duration="20383000" />
+      <workItem from="1571931066750" duration="1302000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="85585000" />
+    <option name="totallyTimeSpent" value="99125000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="811" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Designer" order="0" />
       <window_info id="UI Designer" order="1" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info id="Image Layers" order="4" />
-      <window_info content_ui="combo" id="Project" order="5" sideWeight="0.49880096" visible="true" weight="0.2653791" />
+      <window_info content_ui="combo" id="Project" order="5" sideWeight="0.49880096" visible="true" weight="0.26895565" />
       <window_info id="Structure" order="6" sideWeight="0.50119907" side_tool="true" weight="0.17217484" />
       <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="1" weight="0.32972324" />
       <window_info anchor="bottom" id="Terminal" order="2" weight="0.13237064" />
       <window_info anchor="bottom" id="Database Changes" order="3" />
-      <window_info anchor="bottom" id="Event Log" order="4" sideWeight="0.50143063" side_tool="true" weight="0.21551724" />
+      <window_info anchor="bottom" id="Event Log" order="4" sideWeight="0.50214595" side_tool="true" weight="0.21551724" />
       <window_info anchor="bottom" id="Message" order="5" />
       <window_info anchor="bottom" id="Find" order="6" />
-      <window_info active="true" anchor="bottom" id="Run" order="7" sideWeight="0.4985694" visible="true" weight="0.21551724" />
+      <window_info anchor="bottom" id="Run" order="7" sideWeight="0.49785408" weight="0.21551724" />
       <window_info anchor="bottom" id="Debug" order="8" weight="0.3994253" />
       <window_info anchor="bottom" id="Cvs" order="9" weight="0.25" />
       <window_info anchor="bottom" id="Messages" order="10" weight="0.3275862" />
@@ -616,20 +661,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/fei/paintUI/shape/Text.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="10" column="24" selection-start-line="10" selection-start-column="16" selection-end-line="10" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/fei/paintUI/shape/Shape.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="30" column="38" selection-start-line="30" selection-start-column="38" selection-end-line="30" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/fei/paintUI/shape/Kick.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
@@ -644,56 +675,39 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/fei/sever/Test.java" />
+    <entry file="file://$PROJECT_DIR$/src/com/fei/paintUI/shape/Shape.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="570">
+          <caret line="44" column="20" lean-forward="true" selection-start-line="44" selection-start-column="20" selection-end-line="44" selection-end-column="20" />
+          <folding>
+            <element signature="e#3426#3427#0" expanded="true" />
+            <element signature="e#3460#3461#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/icon_line.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/fei/paintUI/util/ClientUtils.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="470">
-          <caret line="99" lean-forward="true" selection-start-line="99" selection-end-line="99" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/fei/paintUI/PainterUI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="36" selection-start-line="36" selection-end-line="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/fei/paintUI/DrawListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-4661">
-          <caret line="19" column="24" selection-start-line="19" selection-start-column="24" selection-end-line="19" selection-end-column="24" />
+        <state relative-caret-position="1500">
+          <caret line="107" selection-start-line="107" selection-end-line="107" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/fei/client/ChatClient.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4455">
-          <caret line="318" column="42" selection-start-line="318" selection-start-column="42" selection-end-line="318" selection-end-column="42" />
-          <folding>
-            <element signature="e#7813#7814#0" expanded="true" />
-            <element signature="e#7854#7855#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/fei/sever/Test.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="945">
-          <caret line="63" column="33" lean-forward="true" selection-start-line="63" selection-start-column="33" selection-end-line="63" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/fei/sever/ChatServer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="70">
-          <caret line="16" column="28" lean-forward="true" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="28" />
+        <state relative-caret-position="4170">
+          <caret line="301" column="63" selection-start-line="301" selection-start-column="63" selection-end-line="301" selection-end-column="63" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/fei/client/ClientLogin.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="878">
-          <caret line="161" column="31" selection-start-line="161" selection-start-column="31" selection-end-line="161" selection-end-column="31" />
+        <state relative-caret-position="2085">
+          <caret line="163" column="9" selection-start-line="163" selection-start-column="9" selection-end-line="163" selection-end-column="9" />
           <folding>
             <element signature="e#2604#2605#0" expanded="true" />
             <element signature="e#2656#2657#0" expanded="true" />
@@ -701,12 +715,115 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/fei/paintUI/shape/Text.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="10" column="24" selection-start-line="10" selection-start-column="16" selection-end-line="10" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/fei/sever/ChatServer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1260">
+          <caret line="91" column="13" selection-start-line="91" selection-start-column="13" selection-end-line="91" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/fei/paintUI/DrawListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="174" column="40" selection-start-line="174" selection-start-column="24" selection-end-line="174" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/fei/paintUI/PainterUI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="188">
+          <caret line="67" column="48" lean-forward="true" selection-start-line="67" selection-start-column="48" selection-end-line="67" selection-end-column="48" />
+          <folding>
+            <element signature="e#9222#9223#0" expanded="true" />
+            <element signature="e#9259#9260#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
   </component>
   <component name="masterDetails">
     <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor>
+            <show-sorted>false</show-sorted>
+          </artifact-editor>
+          <last-edited>DS_Assignment2:jar</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.5" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
       <state key="ProjectJDKs.UI">
         <settings>
           <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
           <splitter-proportions>
             <option name="proportions">
               <list>

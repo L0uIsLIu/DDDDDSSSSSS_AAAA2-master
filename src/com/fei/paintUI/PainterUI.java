@@ -10,6 +10,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.*;
 import java.net.Socket;
+import java.net.URL;
 import java.net.UnknownHostException;
 import java.util.List;
 import javax.swing.*;
@@ -60,17 +61,23 @@ public class PainterUI extends JPanel {
 
         // 添加图形按钮
         String[] shapeArray = { "Line", "Brush","Rectangle","FillRect", "Oval","FillOval","Circle", "Text", "Rubber" ,"Clear"};
+
         Icon[] icons = new Icon[10];
-        icons[0] = new ImageIcon("images/icon_line.png");
-        icons[1] = new ImageIcon("images/icon_pen.png");
-        icons[2] = new ImageIcon("images/icon_rect.png");
-        icons[3] = new ImageIcon("images/icon_fillrect.png");
-        icons[4] = new ImageIcon("images/icon_oval.png");
-        icons[5] = new ImageIcon("images/icon_filloval.png");
-        icons[6] = new ImageIcon("images/icon_circle.png");
-        icons[7] = new ImageIcon("images/icon_text.png");
-        icons[8] = new ImageIcon("images/icon_eraser.png");
-        icons[9] = new ImageIcon("images/icon_clear.png");
+//        URL fileURL=this.getClass().getResource("/Users/louisliu/Desktop/semester2/DS/ass2/DDDDDSSSSSS_AAAA2-master/resources");
+//        System.out.println(fileURL.getFile());
+//        icons[0] = new ImageIcon(fileURL.getPath());
+        icons[0] = new ImageIcon("./resources/icon_line.png");
+        icons[1] = new ImageIcon("./resources/icon_pen.png");
+        icons[2] = new ImageIcon("./resources/icon_rect.png");
+        icons[3] = new ImageIcon("./resources/icon_fillrect.png");
+        icons[4] = new ImageIcon("./resources/icon_oval.png");
+        icons[5] = new ImageIcon("./resources/icon_filloval.png");
+        icons[6] = new ImageIcon("./resources/icon_circle.png");
+        icons[7] = new ImageIcon("./resources/icon_text.png");
+        icons[8] = new ImageIcon("./resources/icon_eraser.png");
+        icons[9] = new ImageIcon("./resources/icon_clear.png");
+
+
         for (int i = 0; i < shapeArray.length; i++) {
             // 创建图形按钮
             JButton jbu1 = new JButton(shapeArray[i]);
@@ -124,7 +131,24 @@ public class PainterUI extends JPanel {
             @Override
             public void actionPerformed(ActionEvent e) {
                 // TODO Auto-generated method stub
+                int i=JOptionPane.showConfirmDialog(null, "Do you want to new a white board?",
+                        "New confirmation dialog",JOptionPane.YES_NO_CANCEL_OPTION);
+                //通过对话框中按钮的选择来决定结果
+                if(i==0) {
+                    try {
+                        File file = new File("./new.txt");
+                        file.createNewFile(); // 创建新文件
+                        BufferedWriter out = new BufferedWriter(new FileWriter(file));
+                        out.write("[{\"name\":\"Clear\",\"x1\":0,\"y1\":0,\"x2\":900,\"y2\":700,\"name\":\"Clear\",\"red\":255,\"green\":255,\"blue\":255,\"text\":null}]");
+                        out.flush();
+                        out.close();
+                        Shape[] shapes = IOUtil.readFile(file);
+                        dl.rebuild(shapes);
+                    } catch (IOException ex) {
+                        ex.printStackTrace();
+                    }
 
+                }
             }
         });
 
@@ -183,7 +207,7 @@ public class PainterUI extends JPanel {
                         "Exit confirmation dialog",JOptionPane.YES_NO_CANCEL_OPTION);
                 //通过对话框中按钮的选择来决定结果，单机yes时，窗口直接消失
                 if(i==0) {
-                    jf.dispose();
+//                    jf.dispose();
                     String sendStrEXIT = "{\"name\":\"EXIT\",\"x1\":0,\"y1\":0,\"x2\":0,\"y2\":0,\"name\":\"EXIT\",\"red\":255,\"green\":255,\"blue\":255,\"text\":\"" + "EXIT" + "\"}";
 
                     PrintWriter out = null;

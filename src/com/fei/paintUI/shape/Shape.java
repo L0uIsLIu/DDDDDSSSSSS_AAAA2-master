@@ -43,7 +43,7 @@ public abstract class Shape {
 
 
     public Shape() {
-    };
+    }
 
     public Shape(int x1, int y1, int x2, int y2, String name, Color color, String text) {
         this.x1 = x1;
@@ -133,9 +133,6 @@ public abstract class Shape {
 
     public void setColor(Color color) {
         this.color = color;
-/*        this.red = color.getRed();
-        this.green = color.getGreen();
-        this.blue = color.getBlue();*/
     }
 
     public Integer getRed() {

@@ -56,7 +56,6 @@ public class ChatClient extends JFrame {
     }
 
 
-
     public void init( )  {
         this.setTitle("Chatting Room");
         this.setSize(500,400);

@@ -22,7 +22,6 @@ public class ClientUtils {
     }
 
     public static void sendMessage(Shape shape) {
-//        System.out.println("调用了！");
         shape.setRGB();         //设置一下三个分色
         jsonMsg.add(JacksonUtil.shape2Json(shape));
     }
@@ -106,7 +105,6 @@ public class ClientUtils {
     }
 
     public static Shape getShape() {
-//        System.out.println("getShape被调用了！");
         if(shapes.size()!=0) {
             return shapes.remove(0);
         }
